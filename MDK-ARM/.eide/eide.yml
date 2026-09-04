@@ -1,0 +1,230 @@
+version: "4.1"
+name: STM32U073_inclinometer  - 4G - V3.3.1
+type: ARM
+deviceName: null
+packDir: .pack/Keil/STM32U0xx_DFP.2.2.0
+srcDirs: []
+virtualFolder:
+  name: <virtual_root>
+  files: []
+  folders:
+    - name: Application
+      files: []
+      folders:
+        - name: MDK-ARM
+          files:
+            - path: startup_stm32u073xx.s
+          folders: []
+        - name: User
+          files: []
+          folders:
+            - name: Core
+              files:
+                - path: ../Core/Src/main.c
+                - path: ../Core/Src/gpio.c
+                - path: ../Core/Src/adc.c
+                - path: ../Core/Src/i2c.c
+                - path: ../Core/Src/usart.c
+                - path: ../Core/Src/rtc.c
+                - path: ../Core/Src/spi.c
+                - path: ../Core/Src/stm32u0xx_it.c
+                - path: ../Core/Src/stm32u0xx_hal_msp.c
+                - path: ../Core/Src/ICM42688P.c
+                - path: ../Core/Src/bq27220.c
+                - path: ../Core/Src/iic.c
+                - path: ../Core/Src/lte.c
+                - path: ../Core/Src/app_config.c
+                - path: ../Core/Src/app.c
+                - path: ../Core/Src/config_cli.c
+              folders: []
+    - name: Drivers
+      files: []
+      folders:
+        - name: STM32U0xx_HAL_Driver
+          files:
+            - path: ../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_adc.c
+            - path: ../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_adc_ex.c
+            - path: ../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_ll_adc.c
+            - path: ../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_rcc.c
+            - path: ../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_rcc_ex.c
+            - path: ../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_flash.c
+            - path: ../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_flash_ex.c
+            - path: ../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_gpio.c
+            - path: ../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_dma.c
+            - path: ../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_dma_ex.c
+            - path: ../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr.c
+            - path: ../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_pwr_ex.c
+            - path: ../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_cortex.c
+            - path: ../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal.c
+            - path: ../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_exti.c
+            - path: ../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_i2c.c
+            - path: ../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_i2c_ex.c
+            - path: ../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_ll_i2c.c
+            - path: ../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart.c
+            - path: ../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_uart_ex.c
+            - path: ../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_rtc.c
+            - path: ../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_rtc_ex.c
+            - path: ../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_spi.c
+            - path: ../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_spi_ex.c
+          folders: []
+        - name: CMSIS
+          files:
+            - path: ../Core/Src/system_stm32u0xx.c
+          folders: []
+    - name: ::CMSIS
+      files: []
+      folders: []
+dependenceList: []
+outDir: build
+miscInfo:
+  uid: 64a20a3124d499273763899bda8c7d50
+targets:
+  STM32F103_inclinometer  - 4G - V3.3.1:
+    cppPreprocessAttrs:
+      defineList:
+        - USE_HAL_DRIVER
+        - STM32U073xx
+      incList:
+        - .
+        - ../Core/Inc
+        - ../Drivers/STM32U0xx_HAL_Driver/Inc
+        - ../Drivers/STM32U0xx_HAL_Driver/Inc/Legacy
+        - ../Drivers/CMSIS/Device/ST/STM32U0xx/Include
+        - ../Drivers/CMSIS/Include
+        - .cmsis/include
+        - RTE/_STM32F103_inclinometer  - 4G - V3.3.1
+      libList: []
+    excludeList: []
+    settings:
+      debugger: cortex-debug
+    toolchain: AC6
+    toolchainConfigMap:
+      AC6:
+        archExtensions: ""
+        cpuType: Cortex-M0+
+        floatingPointHardware: none
+        options:
+          version: 3
+          afterBuildTasks: []
+          asm-compiler:
+            $use: asm
+            defines: []
+            misc-controls: ""
+          beforeBuildTasks: []
+          c/cpp-compiler:
+            CXX_FLAGS: -include .cmsis/include/stm32u0xx_hal_compat.h
+            C_FLAGS: -include .cmsis/include/stm32u0xx_hal_compat.h
+            language-c: c11
+            language-cpp: c++11
+            link-time-optimization: false
+            one-elf-section-per-function: true
+            optimization: level-3
+            short-enums#wchar: true
+            warnings: ac5-like-warnings
+          global:
+            output-debug-info: enable
+            use-microLIB: false
+          linker:
+            $outputTaskExcludes:
+              - .bin
+            misc-controls: --diag_suppress=L6329
+            output-format: elf
+            ro-base: ""
+            rw-base: ""
+            xo-base: ""
+        scatterFilePath: ""
+        storageLayout:
+          RAM:
+            - id: 1
+              isChecked: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              noInit: false
+              tag: RAM
+            - id: 2
+              isChecked: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              noInit: false
+              tag: RAM
+            - id: 3
+              isChecked: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              noInit: false
+              tag: RAM
+            - id: 1
+              isChecked: true
+              mem:
+                size: "0xa000"
+                startAddr: "0x20000000"
+              noInit: false
+              tag: IRAM
+            - id: 2
+              isChecked: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              noInit: false
+              tag: IRAM
+          ROM:
+            - id: 1
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: ROM
+            - id: 2
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: ROM
+            - id: 3
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: ROM
+            - id: 1
+              isChecked: true
+              isStartup: true
+              mem:
+                size: "0x40000"
+                startAddr: "0x8000000"
+              tag: IROM
+            - id: 2
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: IROM
+        useCustomScatterFile: false
+    uploadConfigMap:
+      JLink:
+        baseAddr: ""
+        bin: ""
+        cpuInfo:
+          cpuName: "null"
+          vendor: "null"
+        otherCmds: ""
+        proType: 1
+        speed: 8000
+      STLink:
+        address: "0x8000000"
+        bin: ""
+        elFile: None
+        optionBytes: .eide/stm32f103_inclinometer  - 4g - v3.3.1.st.option.bytes.ini
+        otherCmds: ""
+        proType: SWD
+        resetMode: default
+        runAfterProgram: true
+        speed: 4000
+    uploader: STLink
