@@ -1,0 +1,53 @@
+﻿# Build outputs
+MDK-ARM/build/
+MDK-ARM/bin/
+MDK-ARM/obj/
+MDK-ARM/out/
+MDK-ARM/dist/
+MDK-ARM/STM32F103_inclinometer  - 4G - V3.3.1/
+MDK-ARM/STM32U073_inclinometer  - 4G - V3.3.1/
+
+# Keil / ArmCC / ArmClang generated files
+*.axf
+*.elf
+*.hex
+*.bin
+*.s19
+*.map
+*.lst
+*.o
+*.d
+*.dep
+*.crf
+*.lnp
+*.htm
+*.build_log.htm
+*.scvd
+*.uvguix.*
+*.uvgui.*
+*.uvgui_*
+
+# EIDE local/generated files
+MDK-ARM/.eide/log/
+MDK-ARM/.eide.usr.ctx.json
+MDK-ARM/.pack/
+*.ept
+*.eide-template
+
+# Python package/build outputs
+__pycache__/
+*.py[cod]
+*.spec.bak
+*.egg-info/
+
+# Temporary backups generated during development
+MDK-ARM/comment_backup_*/
+MDK-ARM/comment_style_backup_*/
+MDK-ARM/comment_style_safe_backup_*/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
